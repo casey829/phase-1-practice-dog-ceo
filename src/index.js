@@ -31,5 +31,13 @@ document.addEventListener("DOMContentLoaded", function(){
           });
        })
        .catch(error => console.log("There was an error fetching dog breeds", error));
+
+       //challenge 3: change of color when clicked
+       document.getElementById("dog-breeds").addEventListener("click", function(event){
+           if(event.target.tagName === "LI") {
+            event.target.style.color = "red"; //it changes the color
+           }
+       });
 })
 
+    
