@@ -38,6 +38,21 @@ document.addEventListener("DOMContentLoaded", function(){
             event.target.style.color = "red"; //it changes the color
            }
        });
-})
+
+       // Challenge 4: Filter breeds by selected letter
+       document.getElementById("breed-dropdown").addEventListener("change", function(event){
+        const selectedLetter = event.target.value;
+        const breedList = document.getElementById("dog-breeds");
+        const breedItems = breedList.getElementsByTagName("li");
+        for (let i = 0; i < breedItems.length; i++){
+            const breedName = breedItems[i].textContent;
+            if (breedName.startsWith(selectedLetter)){
+                breedItems[i].style.display = "list-item"; //selected letter
+            }else {
+                breedItems[i].style.display = "none"; //hide selected letter
+            }
+        }
+       });
+});
 
     
